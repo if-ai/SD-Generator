@@ -90,26 +90,26 @@ const Home = () => {
     setInput(input + mod8);
   };
 
-  const generateAction = async () => {
+  const generateAction = async (req, res) => {
     console.log('Generating...');
-    console.log(input);
 
-      // Add this check to make sure there is no double click
-      iF (isGenerating && retry === 0) return;
+    if (isGenerating && retry === 0) return;
 
-      setIsGenerating(true);
-  
-      if (retry > 0) {
-        setRetryCount((prevState) => {
-          if (prevState === 0) {
-            return 0;
-          } else {
-            return prevState - 1;
-          }
-        });
-  
-        setRetry(0);
-      }
+    // Set loading has started
+    setIsGenerating(true);
+
+    // If this is a retry request, take away retryCount
+    if (retry > 0) {
+      setRetryCount((prevState) => {
+        if (prevState === 0) {
+          return 0;
+        } else {
+          return prevState - 1;
+        }
+      });
+
+      setRetry(0);
+    }
       // Replace the prompt here 
       const finalInput = input.replace(/cristiano|cr7|ronaldo/gi, 'CrisRo07');
   
@@ -377,7 +377,7 @@ const Home = () => {
         >
           <div className="badge">
             <Image src={IFLogo} alt="IF logo" />
-            <p>build with IF</p>
+            <p>build by ImpactFrames</p>
           </div>
         </a>
       </div>
