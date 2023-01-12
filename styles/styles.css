@@ -245,6 +245,10 @@ body {
 }
 
 .output-content img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
     border-radius: 16px;
 }
 
@@ -265,7 +269,7 @@ body {
     }
 
     .prompt-container {
-        max-width: 600px;
+        max-width: 1200px;
         width: 100%;
     }
 
