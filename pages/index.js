@@ -85,7 +85,7 @@ const Home = () => {
   const copyMod7ToInput = () => {
     setInput(input + mod7);
   };
-  
+
   const copyMod8ToInput = () => {
     setInput(input + mod8);
   };
@@ -110,36 +110,36 @@ const Home = () => {
 
       setRetry(0);
     }
-      // Replace the prompt here 
-      const finalInput = input.replace(/cristiano|cr7|ronaldo/gi, 'CrisRo07');
-  
-      const response = await fetch('/api/generate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'image/jpeg',
-        },
-        body: JSON.stringify({ input: finalInput}),
-      });
-  
-      const data = await response.json();
-  
-      if (response.status === 503) {
-        setRetry(data.estimated_time);
-        return;
-      }
-  
-      if (!response.ok) {
-        console.log(`Error: ${data.error}`);
-        setIsGenerating(false);
-        return;
-      }
-  
-      // Set final prompt here
-      setFinalPrompt(input);
-      // Remove content from input box
-      setInput('');
-      setImg(data.image);
+    // Replace the prompt here 
+    const finalInput = input.replace(/iF-Ai/gi, 'modelshoot style, the most beautiful artwork in the world, ');
+
+    const response = await fetch('/api/generate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'image/jpeg',
+      },
+      body: JSON.stringify({ input: finalInput }),
+    });
+
+    const data = await response.json();
+
+    if (response.status === 503) {
+      setRetry(data.estimated_time);
+      return;
+    }
+
+    if (!response.ok) {
+      console.log(`Error: ${data.error}`);
       setIsGenerating(false);
+      return;
+    }
+
+    // Set final prompt here
+    setFinalPrompt(input);
+    // Remove content from input box
+    setInput('');
+    setImg(data.image);
+    setIsGenerating(false);
   };
 
   const sleep = (ms) => {
@@ -154,7 +154,7 @@ const Home = () => {
         console.log(`Model still loading after ${maxRetries} retries. Try request again in 5 minutes.`);
         setRetryCount(maxRetries);
         return;
-        }
+      }
 
       console.log(`Trying again in ${retry} seconds.`);
 
@@ -169,25 +169,25 @@ const Home = () => {
 
     runRetry();
   }, [retry]);
-	
+
 
   return (
     <div className="root">
       <Head>
-        <title>Ronaldo Picture Creator</title>
+        <title>iF-Ai</title>
       </Head>
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>CR7 Generator</h1>
+            <h1>iF-Ai Generator</h1>
           </div>
           <div className="header-subtitle">
             <h2>
               <center>
-                To construct the prompt start with the first box select something and copy to input until you reach the Object Dropdown. Then write what you want to create in the input field and continue adding with the rest of the boxes Finally click the Generate button to create your image.
+                To construct the prompt write iF-Ai and start copying values in to the input from the first box select until you reach the Object Dropdown. Then write what you want to create in the and continue adding with the rest of the boxes Finally click the Generate button to create your image.
               </center>
             </h2>
-          </div> 
+          </div>
           <br />
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <select value={mod1} onChange={handleMod1Change}>
@@ -338,7 +338,7 @@ const Home = () => {
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <select value={mod7} onChange={handleMod7Change}>
               <option value="">Flair</option>
-              <option value="trending on ArtStation, trending on CGSociety, Intricate, High Detail ">Flair 1</option>
+              <option value="(extremely detailed CG unity 8k wallpaper) tending ArtStation, CGSociety, ">Flair 1</option>
               <option value="masterpiece, best quality, a colorful, 8k, intricate detail, ">Flair 2</option>
               <option value="warm colors, 8K, 3D behance, HD, octane, rendered with photoshop filter. unreal engine 5 ">Natural</option>
               <option value="colorful,  ">volumetric lighting</option>
@@ -383,6 +383,6 @@ const Home = () => {
       </div>
     </div>
   );
-}; 
+};
 
 export default Home;
