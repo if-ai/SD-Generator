@@ -77,20 +77,38 @@ body {
 }
 
 .prompt-box {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #ccc;
-    font-family: sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 20px auto;
-    max-width: 600px;
+    border-bottom-width: 1px;
+    border-color: rgba(255, 255, 255, 0.1);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-style: solid;
+    border-top-width: 1px;
+    place-content: flex-start;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column nowrap;
+    gap: 10px;
+    overflow: hidden;
     padding: 20px;
-    width: 80%;
+    position: relative;
+    width: 610px;
+    max-width: 1200px;
+    will-change: transform;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    font-style: normal;
+    letter-spacing: 0px;
+    line-height: 1.6em;
+    text-align: start;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    text-transform: none;
 }
-
-
 
 .prompt-box input {
     font-family: 'Manrope', sans-serif;
@@ -120,7 +138,7 @@ body {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: #d37cf2;
+    background-color: #F32E98;
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -227,10 +245,6 @@ body {
 }
 
 .output-content img {
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    display: block;
     border-radius: 16px;
 }
 
@@ -251,7 +265,7 @@ body {
     }
 
     .prompt-container {
-        max-width: 1200px;
+        max-width: 600px;
         width: 100%;
     }
 
