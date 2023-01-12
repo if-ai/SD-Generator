@@ -77,45 +77,19 @@ body {
 }
 
 .prompt-box {
-    border-bottom-width: 1px;
-    border-color: rgba(255, 255, 255, 0.1);
-    border-left-width: 1px;
-    border-right-width: 1px;
-    border-style: solid;
-    border-top-width: 1px;
-    place-content: flex-start;
-    align-items: flex-start;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    display: flex;
-    flex: 0 0 auto;
-    flex-flow: column wrap;
-    height: 100%;
-    padding: 0px;
-    width: 600px;
-    max-width: 1200px;
-    word-wrap: break-word;
-    overflow: auto;  
-    gap: 10px;
-    padding: 20px;
-    position: relative;
-    will-change: transform;
-    overflow: auto;
-    outline: none;
-    resize: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    font-family: sans-serif;
     font-size: 16px;
-    font-style: normal;
-    letter-spacing: 0px;
-    line-height: 1.6em;
-    text-align: start;
-    color: rgba(255, 255, 255, 0.75);
-    text-decoration: none;
-    text-transform: none;
-    white-space: pre-wrap; /* preserve white space and line breaks */
-    overflow-wrap: break-word;  /*allow long words to break onto a new line 
-    width: 100%; ensure the input takes up the full width of its container 
-    min-height: 80px;  set a minimum height to allow for multiple lines of text */
+    line-height: 1.5;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    width: 80%;
 }
+
 
 
 .prompt-box input {
