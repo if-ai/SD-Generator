@@ -94,8 +94,6 @@ body {
     overflow: hidden;
     padding: 20px;
     position: relative;
-    width: 610px;
-    max-width: 1200px;
     will-change: transform;
     overflow: auto;
     outline: none;
@@ -108,7 +106,12 @@ body {
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     text-transform: none;
+    white-space: pre-wrap; /* preserve white space and line breaks */
+    overflow-wrap: break-word; /* allow long words to break onto a new line */
+    width: 100%; /* ensure the input takes up the full width of its container */
+    min-height: 80px; /* set a minimum height to allow for multiple lines of text */
 }
+
 
 .prompt-box input {
     font-family: 'Manrope', sans-serif;
