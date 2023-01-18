@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <meta property="og:title" content="CR7 Generator" key="title" />
+        <meta property="og:title" content="iF-Ai SD-Generator" key="title" />
         <meta
           property="og:description"
           content="build by ImpactFrames"
